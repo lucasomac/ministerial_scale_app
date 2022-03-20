@@ -18,5 +18,6 @@ abstract class Service {
   Future<Scale> createScale(@Body() Scale scale);
 
   @GET("scales/byDate")
-  Future<List<Scale>> getScalesByDate(@Query("date", encoded: true) DateTime date);
+  Future<List<Scale>> getScalesByDate(
+      @Query("date", encoded: true) DateTime date);
 }
