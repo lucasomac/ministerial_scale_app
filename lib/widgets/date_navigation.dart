@@ -14,22 +14,22 @@ class DateNavigation extends StatefulWidget {
 }
 
 class _DateNavigationState extends State<DateNavigation> {
-  late DateTime actualDate;
+  late DateTime actualDate = widget.date;
+
   void _incrementDate() {
     setState(() {
-      actualDate.add(const Duration(days: 1));
+      actualDate = actualDate.add(const Duration(days: 1));
     });
   }
 
   void _decrementDate() {
     setState(() {
-      actualDate.subtract(const Duration(days: 1));
+      actualDate = actualDate.subtract(const Duration(days: 1));
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    actualDate = widget.date;
     return Container(
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
@@ -39,7 +39,7 @@ class _DateNavigationState extends State<DateNavigation> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          GestureDetector(
+          InkWell(
             onTap: _decrementDate,
             child: const Icon(
               Icons.arrow_circle_left,
@@ -49,7 +49,7 @@ class _DateNavigationState extends State<DateNavigation> {
           Text(
             DateFormat(Strings.dateFormatBrazilian).format(actualDate),
           ),
-          GestureDetector(
+          InkWell(
             onTap: _incrementDate,
             child: const Icon(
               Icons.arrow_circle_right,

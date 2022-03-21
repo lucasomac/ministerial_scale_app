@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Padding(
                           padding: EdgeInsets.only(top: 16),
-                          child: Text('Awaiting result...'),
+                          child: Text('Carregando as escalas...'),
                         )
                       ],
                     ),
