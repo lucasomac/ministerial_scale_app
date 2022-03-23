@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
         body: const HomePage(title: Strings.appName),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
-          tooltip: 'Increment',
+          tooltip: Strings.tooltipAddScale,
           child: Icon(
             Icons.add,
             color: Theme.of(context).iconTheme.color,
